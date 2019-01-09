@@ -1,0 +1,46 @@
+﻿
+
+@model IEnumerable<HWCodeAssgn.Models.Profile>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- <div class="text-center"> -->
+    <!-- <h1 class="display-6">Housing Works Interview Task </h1> -->
+    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> -->
+
+
+<p id = "CreateBtn">
+    <a asp-controller="Home" asp-action="Create">Add Profile</a>
+</p>
+
+<table class="ProfilesTable">
+  <tr>
+    <th class="tg-0lax">Action</th>
+    <th class="tg-0lax">Name</th>
+    <th class="tg-0lax">Email</th>
+    <th class="tg-0lax">Birth Date</th>
+  </tr>
+
+  @foreach (var item in Model) {
+          <tr>
+              <td class="tg-0lax">
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.ID">Update</a> | 
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+              </td>
+              <td class="tg-0lax">
+                  @Html.DisplayFor(modelItem => item.Name)
+              </td>
+              <td class="tg-0lax">
+                  @Html.DisplayFor(modelItem => item.Email)
+              </td>
+              <td class="tg-0lax">
+                  @Html.DisplayFor(modelItem => item.BirthDate)
+              </td>
+          </tr>
+  }
+  
+  
+</table>
+
