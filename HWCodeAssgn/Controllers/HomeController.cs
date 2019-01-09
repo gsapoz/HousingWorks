@@ -166,11 +166,6 @@ namespace HWCodeAssgn.Controllers
             return _context.Profile.Any(e => e.ID == id);
         }
 
-        // public IActionResult Privacy()
-        // {
-        //     return View();
-        // }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

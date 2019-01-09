@@ -5,10 +5,7 @@ namespace HWCodeAssgn.Data
 {
     public class SiteContext : DbContext
     {
-        public SiteContext(DbContextOptions<SiteContext> options) : base(options)
-        {
-           
-        }
+        public SiteContext(DbContextOptions<SiteContext> options) : base(options){}
 
         /* Creates a DbSet Property for "Profile" Entity Set (Profiles Table) */
         public DbSet<Profile> Profile { get; set; }
